@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: node
   labels:
-    app: nginx
+    app: node
     demo: helm
 spec:
   replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
-      app: nginx
+      app: node
       demo: helm
   template:
     metadata:
       labels:
-        app: nginx
+        app: node
         demo: helm
     spec:
       containers:
-      - name: nginx
-        image: "nginx:{{ .Values.deployment.imageVersion }}"
+      - name: node
+        image: "node:{{ .Values.deployment.imageVersion }}"
         ports:
         - containerPort: 80
