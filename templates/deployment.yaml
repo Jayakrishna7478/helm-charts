@@ -19,6 +19,6 @@ spec:
     spec:
       containers:
       - name: node
-        image: "nginx:{{ .Values.deployment.imageVersion }}"
+        image: "openjdk:{{ .Values.deployment.imageVersion }}"
         ports:
         - containerPort: 80
